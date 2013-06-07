@@ -53,10 +53,10 @@
             </objects>
             <point key="canvasLocation" x="-595" y="629"/>
         </scene>
-        <!--Table View Controller - Item-->
+        <!--Latest VideosTVC - Item-->
         <scene sceneID="euK-fb-Fdt">
             <objects>
-                <tableViewController id="iG2-eC-j1k" sceneMemberID="viewController">
+                <tableViewController id="iG2-eC-j1k" customClass="LatestVideosTVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="EDJ-zb-Z1U">
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
