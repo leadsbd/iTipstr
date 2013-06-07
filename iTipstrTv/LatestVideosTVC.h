@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VimeoHttpClient.h"
 
-@interface LatestVideosTVC : UITableViewController
+@interface LatestVideosTVC : UITableViewController<VimeoHttpClientDelegate>
+
+@property(strong,nonatomic) NSArray *videoItems;
 
 @end

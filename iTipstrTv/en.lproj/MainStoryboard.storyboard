@@ -21,7 +21,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHJ-Ro-83f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1085" y="380"/>
+            <point key="canvasLocation" x="-1713" y="360"/>
         </scene>
         <!--Table View Controller - Item-->
         <scene sceneID="1Wo-WB-fgF">
@@ -51,7 +51,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="368-TR-7Ol" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-595" y="629"/>
+            <point key="canvasLocation" x="-1183" y="641"/>
         </scene>
         <!--Latest VideosTVC - Item-->
         <scene sceneID="euK-fb-Fdt">
@@ -81,9 +81,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgV-gb-yOA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-616" y="-207"/>
+            <point key="canvasLocation" x="-1204" y="-159"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="LatestVideosTVC" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LatestVideosTVC.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
