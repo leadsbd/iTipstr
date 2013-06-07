@@ -17,7 +17,7 @@
 		71B770131761A318008B103F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B770121761A318008B103F /* Default@2x.png */; };
 		71B770151761A318008B103F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B770141761A318008B103F /* Default-568h@2x.png */; };
 		71B770181761A318008B103F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71B770161761A318008B103F /* MainStoryboard.storyboard */; };
-		71B7701B1761A318008B103F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B7701A1761A318008B103F /* ViewController.m */; };
+		71EACF761761E3CE0016C923 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71EACF751761E3CE0016C923 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +35,7 @@
 		71B770121761A318008B103F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		71B770141761A318008B103F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		71B770171761A318008B103F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		71B770191761A318008B103F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		71B7701A1761A318008B103F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		71EACF751761E3CE0016C923 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71EACF761761E3CE0016C923 /* MediaPlayer.framework in Frameworks */,
 				71B76FFF1761A317008B103F /* UIKit.framework in Frameworks */,
 				71B770011761A317008B103F /* Foundation.framework in Frameworks */,
 				71B770031761A317008B103F /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +73,7 @@
 		71B76FFD1761A317008B103F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				71EACF751761E3CE0016C923 /* MediaPlayer.framework */,
 				71B76FFE1761A317008B103F /* UIKit.framework */,
 				71B770001761A317008B103F /* Foundation.framework */,
 				71B770021761A317008B103F /* CoreGraphics.framework */,
@@ -86,8 +87,6 @@
 				71B7700D1761A318008B103F /* AppDelegate.h */,
 				71B7700E1761A318008B103F /* AppDelegate.m */,
 				71B770161761A318008B103F /* MainStoryboard.storyboard */,
-				71B770191761A318008B103F /* ViewController.h */,
-				71B7701A1761A318008B103F /* ViewController.m */,
 				71B770051761A317008B103F /* Supporting Files */,
 			);
 			path = iTipstrTv;
@@ -175,7 +174,6 @@
 			files = (
 				71B7700B1761A318008B103F /* main.m in Sources */,
 				71B7700F1761A318008B103F /* AppDelegate.m in Sources */,
-				71B7701B1761A318008B103F /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +296,7 @@
 				71B770201761A318008B103F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
