@@ -43,6 +43,37 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - custom methods
+
+-(UIImage *)getImage:(NSString *) imageUrl
+{
+//   NSData *data=[NSData dataWithContentsOfURL:[NSURL URLWithString:gameObj.gameThumbnails]]; UIImage *myImage=[UIImage imageWithData:data]; imageView.image=[UIImage imageWithData:UIImageJPEGRepresentation(myImage, 0.9)];
+    
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
+    UIImage *myImage = [UIImage imageWithData:data];
+    UIImage *jpegImage = [UIImage imageWithData:UIImageJPEGRepresentation(myImage, 0.9)];
+    return jpegImage;
+}
+
+-(NSString *) getTime:(NSString *)seconds
+{
+    int sec = [seconds intValue];
+    NSString *strTime;
+    if(sec<60)
+    {
+       strTime = [NSString stringWithFormat:@"00:%i",sec];
+    }
+    else
+    {
+        int vagfol = (int)sec/60;
+        int vagshes = sec%60;
+        
+        strTime = [NSString stringWithFormat:@"%i:%i",vagfol,vagshes];
+    }
+    
+    return strTime;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -65,7 +96,19 @@
     // Configure the cell...
     
     NSDictionary *videoDict = [self.videoItems objectAtIndex:indexPath.row];
-    cell.textLabel.text = [videoDict objectForKey:@"title"];
+    //image view 
+    UIImageView *imageView = (UIImageView*)[cell.contentView viewWithTag:100];
+    imageView.image = [self getImage:[videoDict objectForKey:@"thumbnail_small"]];
+    //Title Label
+    UILabel *labelTitle = (UILabel*)[cell.contentView viewWithTag:101];
+    labelTitle.text = [videoDict objectForKey:@"title"];
+    
+    //Time label
+    UILabel *labelDuration = (UILabel*)[cell.contentView viewWithTag:102];
+    labelDuration.text=[self getTime:[videoDict objectForKey:@"duration"]];
+    
+    
+//    cell.textLabel.text = [videoDict objectForKey:@"title"];
     
     return cell;
 }
