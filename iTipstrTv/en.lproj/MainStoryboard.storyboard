@@ -71,12 +71,12 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rCa-bc-sa9">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="88" id="bJa-Zk-Zos"/>
-                                                <constraint firstAttribute="width" constant="132" id="ihO-vv-i6d"/>
+                                                <constraint firstAttribute="width" constant="110" id="RHS-gu-9Ln"/>
+                                                <constraint firstAttribute="height" constant="83" id="bbW-Jz-pj3"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="152" translatesAutoresizingMaskIntoConstraints="NO" id="vIX-dV-5aY">
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="45" id="Bh1-UY-Qp9"/>
                                                 <constraint firstAttribute="width" constant="152" id="wFz-cs-xv1"/>
@@ -105,11 +105,11 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="vIX-dV-5aY" firstAttribute="leading" secondItem="9Cx-2F-tN7" secondAttribute="leading" constant="145" id="KoT-0D-MUv"/>
-                                    <constraint firstItem="rCa-bc-sa9" firstAttribute="leading" secondItem="9Cx-2F-tN7" secondAttribute="leading" type="default" id="Q4z-x0-Ue8"/>
-                                    <constraint firstAttribute="bottom" secondItem="bIZ-QK-cPi" secondAttribute="bottom" constant="1" id="hTQ-zP-iUX"/>
-                                    <constraint firstItem="rCa-bc-sa9" firstAttribute="centerY" secondItem="9Cx-2F-tN7" secondAttribute="centerY" type="default" id="iUF-rS-xNj"/>
-                                    <constraint firstItem="vIX-dV-5aY" firstAttribute="top" secondItem="9Cx-2F-tN7" secondAttribute="top" constant="5" id="o0J-z6-N7D"/>
+                                    <constraint firstItem="vIX-dV-5aY" firstAttribute="top" secondItem="9Cx-2F-tN7" secondAttribute="top" constant="5" id="4Jc-il-2Xj"/>
+                                    <constraint firstAttribute="bottom" secondItem="bIZ-QK-cPi" secondAttribute="bottom" constant="1" id="8hb-0o-odM"/>
+                                    <constraint firstItem="rCa-bc-sa9" firstAttribute="leading" secondItem="9Cx-2F-tN7" secondAttribute="leading" constant="8" id="PtE-Ci-3LZ"/>
+                                    <constraint firstItem="rCa-bc-sa9" firstAttribute="centerY" secondItem="9Cx-2F-tN7" secondAttribute="centerY" type="default" id="SRC-aV-2p7"/>
+                                    <constraint firstItem="vIX-dV-5aY" firstAttribute="leading" secondItem="9Cx-2F-tN7" secondAttribute="leading" constant="145" id="lLb-e3-LN3"/>
                                     <constraint firstAttribute="trailing" secondItem="bIZ-QK-cPi" secondAttribute="trailing" constant="9" id="y9m-l4-CmZ"/>
                                 </constraints>
                                 <connections>
