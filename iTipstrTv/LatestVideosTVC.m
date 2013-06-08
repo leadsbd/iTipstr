@@ -6,8 +6,10 @@
 //  Copyright (c) 2013 iOS Team. All rights reserved.
 //
 
+#import <MediaPlayer/MediaPlayer.h>
 #import "LatestVideosTVC.h"
 #import "VimeoHttpClient.h"
+#import "StreamingVC.h"
 
 @interface LatestVideosTVC ()
 
@@ -68,20 +70,23 @@
     return cell;
 }
 
-
+ 
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    NSDictionary *videoDict=[self.videoItems objectAtIndex:indexPath.row];
+//    NSURL *videoUrl = [NSURL URLWithString:[videoDict objectForKey:@"url"]];
+//    
+//    NSURL *appleUrl = [NSURL URLWithString:@"https://vimeo.com/65050844"];
+//    
+//    NSLog(@"video url : %@",videoUrl);
+//    MPMoviePlayerViewController *player = [[MPMoviePlayerViewController alloc] initWithContentURL:appleUrl];
+//    
+//    [self presentMoviePlayerViewControllerAnimated:player]; 
+//    
+//}
 
 
 #pragma mark - VimeoHttpClientDelegate methods
@@ -91,7 +96,7 @@
     self.title = @"Latest Videos";
     [self.tableView reloadData];
     
-    NSLog(@"data inside tvc: %@",self.videoItems);
+   // NSLog(@"data inside tvc: %@",self.videoItems);
 }
 -(void)vimeoHttpClient:(VimeoHttpClient *)client didFailWithError:(NSError *)error
 {
@@ -102,6 +107,19 @@
     [av show];
     
 }
+
+
+#pragma mark - segue method
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
+    StreamingVC *svc = segue.destinationViewController;
+    svc.selectedDict = [self.videoItems objectAtIndex:indexPath.row];
+    
+}
+
 
 
 

@@ -29,6 +29,7 @@
 		71EACF99176218690016C923 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EACF90176218690016C923 /* UIImageView+AFNetworking.m */; };
 		71EACF9C17621AFC0016C923 /* VimeoHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EACF9B17621AFC0016C923 /* VimeoHttpClient.m */; };
 		71EACFA217622ECD0016C923 /* LatestVideosTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EACFA117622ECC0016C923 /* LatestVideosTVC.m */; };
+		71EACFA5176243000016C923 /* StreamingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EACFA4176243000016C923 /* StreamingVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,8 @@
 		71EACF9B17621AFC0016C923 /* VimeoHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VimeoHttpClient.m; sourceTree = "<group>"; };
 		71EACFA017622ECC0016C923 /* LatestVideosTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatestVideosTVC.h; sourceTree = "<group>"; };
 		71EACFA117622ECC0016C923 /* LatestVideosTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestVideosTVC.m; sourceTree = "<group>"; };
+		71EACFA3176243000016C923 /* StreamingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamingVC.h; sourceTree = "<group>"; };
+		71EACFA4176243000016C923 /* StreamingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamingVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,8 @@
 				71B770161761A318008B103F /* MainStoryboard.storyboard */,
 				71EACFA017622ECC0016C923 /* LatestVideosTVC.h */,
 				71EACFA117622ECC0016C923 /* LatestVideosTVC.m */,
+				71EACFA3176243000016C923 /* StreamingVC.h */,
+				71EACFA4176243000016C923 /* StreamingVC.m */,
 				71EACF9A17621AFC0016C923 /* VimeoHttpClient.h */,
 				71EACF9B17621AFC0016C923 /* VimeoHttpClient.m */,
 				71B770051761A317008B103F /* Supporting Files */,
@@ -250,6 +255,7 @@
 				71EACF99176218690016C923 /* UIImageView+AFNetworking.m in Sources */,
 				71EACF9C17621AFC0016C923 /* VimeoHttpClient.m in Sources */,
 				71EACFA217622ECD0016C923 /* LatestVideosTVC.m in Sources */,
+				71EACFA5176243000016C923 /* StreamingVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
