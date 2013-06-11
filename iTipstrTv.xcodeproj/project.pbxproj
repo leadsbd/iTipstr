@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6925AF941765B7B30011951D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6925AF931765B7B30011951D /* Social.framework */; };
+		69B33D0D1764627200D39B7A /* AboutTVCV.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B33D0C1764627200D39B7A /* AboutTVCV.m */; };
 		7179B1271763C1BA00B0556A /* cell_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 7179B11E1763C1BA00B0556A /* cell_bottom.png */; };
 		7179B1281763C1BA00B0556A /* cell_bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7179B11F1763C1BA00B0556A /* cell_bottom@2x.png */; };
 		7179B1291763C1BA00B0556A /* cell_middle.png in Resources */ = {isa = PBXBuildFile; fileRef = 7179B1201763C1BA00B0556A /* cell_middle.png */; };
@@ -62,6 +64,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6925AF931765B7B30011951D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		69B33D0B1764627200D39B7A /* AboutTVCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTVCV.h; sourceTree = "<group>"; };
+		69B33D0C1764627200D39B7A /* AboutTVCV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTVCV.m; sourceTree = "<group>"; };
 		7179B11E1763C1BA00B0556A /* cell_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_bottom.png; sourceTree = "<group>"; };
 		7179B11F1763C1BA00B0556A /* cell_bottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_bottom@2x.png"; sourceTree = "<group>"; };
 		7179B1201763C1BA00B0556A /* cell_middle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_middle.png; sourceTree = "<group>"; };
@@ -138,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6925AF941765B7B30011951D /* Social.framework in Frameworks */,
 				71EACF761761E3CE0016C923 /* MediaPlayer.framework in Frameworks */,
 				71B76FFF1761A317008B103F /* UIKit.framework in Frameworks */,
 				71B770011761A317008B103F /* Foundation.framework in Frameworks */,
@@ -178,6 +184,7 @@
 		71B76FF21761A317008B103F = {
 			isa = PBXGroup;
 			children = (
+				6925AF931765B7B30011951D /* Social.framework */,
 				71B770041761A317008B103F /* iTipstrTv */,
 				71B76FFD1761A317008B103F /* Frameworks */,
 				71B76FFC1761A317008B103F /* Products */,
@@ -214,6 +221,8 @@
 				71EACFA117622ECC0016C923 /* LatestVideosTVC.m */,
 				71EACFA3176243000016C923 /* StreamingVC.h */,
 				71EACFA4176243000016C923 /* StreamingVC.m */,
+				69B33D0B1764627200D39B7A /* AboutTVCV.h */,
+				69B33D0C1764627200D39B7A /* AboutTVCV.m */,
 				71EACF9A17621AFC0016C923 /* VimeoHttpClient.h */,
 				71EACF9B17621AFC0016C923 /* VimeoHttpClient.m */,
 				71B770051761A317008B103F /* Supporting Files */,
@@ -380,6 +389,7 @@
 				71EACF9C17621AFC0016C923 /* VimeoHttpClient.m in Sources */,
 				71EACFA217622ECD0016C923 /* LatestVideosTVC.m in Sources */,
 				71EACFA5176243000016C923 /* StreamingVC.m in Sources */,
+				69B33D0D1764627200D39B7A /* AboutTVCV.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

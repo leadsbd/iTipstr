@@ -14,5 +14,6 @@
 @property(nonatomic,strong) NSDictionary *selectedDict;
 @property(nonatomic,strong) MPMoviePlayerController *player;
 @property (weak, nonatomic) IBOutlet UIWebView *videoWebView;
+- (IBAction)shareButton:(id)sender;
 
 @end

@@ -23,14 +23,14 @@
    // UITabBarItem *tabBarItem3 = [tabBar.items objectAtIndex:2];
   //  UITabBarItem *tabBarItem4 = [tabBar.items objectAtIndex:3];
     
-    tabBarItem1.title = @"Latest Videos";
-    tabBarItem2.title = @"Top Videos";
- //   tabBarItem3.title = @"My Plan";
+    tabBarItem1.title = @"Videos";
+    tabBarItem2.title = @"About";
+ //   tabBarItem3.title = @"About";
   //  tabBarItem4.title = @"Settings";
     
     [tabBarItem1 setFinishedSelectedImage:[UIImage imageNamed:@"home_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"home.png"]];
     [tabBarItem2 setFinishedSelectedImage:[UIImage imageNamed:@"maps_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"maps.png"]];
- //   [tabBarItem3 setFinishedSelectedImage:[UIImage imageNamed:@"myplan_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"myplan.png"]];
+    //[tabBarItem3 setFinishedSelectedImage:[UIImage imageNamed:@"myplan_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"myplan.png"]];
  //   [tabBarItem4 setFinishedSelectedImage:[UIImage imageNamed:@"settings_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"settings.png"]];
     
     

@@ -10,6 +10,7 @@
 #import "LatestVideosTVC.h"
 #import "VimeoHttpClient.h"
 #import "StreamingVC.h"
+#import "AFImageRequestOperation.h"
 
 @interface LatestVideosTVC ()
 
@@ -37,17 +38,17 @@
     
     
     
-    
-    // Remove table cell separator
-    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    
-    // Assign our own backgroud for the view
-    self.parentViewController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"common_bg"]];
-    self.tableView.backgroundColor = [UIColor clearColor];
-    
-    // Add padding to the top of the table view
-    UIEdgeInsets inset = UIEdgeInsetsMake(5, 0, 0, 0);
-    self.tableView.contentInset = inset;
+//    
+//    // Remove table cell separator
+//    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+//    
+//    // Assign our own backgroud for the view
+//    self.parentViewController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"common_bg"]];
+//    self.tableView.backgroundColor = [UIColor clearColor];
+//    
+//    // Add padding to the top of the table view
+//    UIEdgeInsets inset = UIEdgeInsetsMake(5, 0, 0, 0);
+//    self.tableView.contentInset = inset;
     
 }
 
@@ -129,9 +130,22 @@
     // Configure the cell...
     
     NSDictionary *videoDict = [self.videoItems objectAtIndex:indexPath.row];
-    //image view 
+    //image view
+    NSString *imageUrl = [videoDict objectForKey:@"thumbnail_large"];
     UIImageView *imageView = (UIImageView*)[cell.contentView viewWithTag:100];
-    imageView.image = [self getImage:[videoDict objectForKey:@"thumbnail_small"]];
+   // imageView.image = [self getImage:imageUrl];
+    //Store this image on the same server as the weather canned files
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:imageUrl]];
+    AFImageRequestOperation *operation = [AFImageRequestOperation imageRequestOperationWithRequest:request
+                                                                              imageProcessingBlock:nil
+                                                                                           success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                                                                                               imageView.image = image;
+//                                                                                               [self saveImage:image withFilename:@"background.png"];
+                                                                                           }
+                                                                                           failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+                                                                                               NSLog(@"Error %@",error);
+                                                                                           }];
+    [operation start];
     //Title Label
     UILabel *labelTitle = (UILabel*)[cell.contentView viewWithTag:101];
     labelTitle.text = [videoDict objectForKey:@"title"];
@@ -144,11 +158,11 @@
 //    cell.textLabel.text = [videoDict objectForKey:@"title"];
     
     // Assign our own background image for the cell
-    UIImage *background = [self cellBackgroundForRowAtIndexPath:indexPath];
-    
-    UIImageView *cellBackgroundView = [[UIImageView alloc] initWithImage:background];
-    cellBackgroundView.image = background;
-    cell.backgroundView = cellBackgroundView;
+//    UIImage *background = [self cellBackgroundForRowAtIndexPath:indexPath];
+//    
+//    UIImageView *cellBackgroundView = [[UIImageView alloc] initWithImage:background];
+//    cellBackgroundView.image = background;
+//    cell.backgroundView = cellBackgroundView;
     
     return cell;
 }

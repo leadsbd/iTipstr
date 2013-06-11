@@ -7,6 +7,7 @@
 //
 
 #import "StreamingVC.h"
+#import <Social/Social.h>
 
 @interface StreamingVC ()
 
@@ -84,5 +85,48 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)shareButton:(id)sender {
+    
+//    SLComposeViewController *controllerSLC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+//    [controllerSLC setInitialText:[selectedDict objectForKey:@"title"]];
+//  //  [controllerSLC addURL:[NSURL URLWithString:[selectedDict objectForKey:@"thumbnail_small"]]];
+//  //  [controllerSLC addImage:[UIImage imageNamed:@"test.jpg"]];
+//    [self presentViewController:controllerSLC animated:YES completion:Nil];
+    
+    
+    
+//    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+//        // Initialize Compose View Controller
+//        SLComposeViewController *vc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+//        // Configure Compose View Controller
+//        [vc setInitialText:[selectedDict objectForKey:@"title"]];
+//       // [vc addImage:self.image];
+//        // Present Compose View Controller
+//        [self presentViewController:vc animated:YES completion:nil];
+//    } else {
+//        NSString *message = @"It seems that we cannot talk to Facebook at the moment or you have not yet added your Facebook account to this device. Go to the Settings application to add your Facebook account to this device.";
+//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//        [alertView show];
+//    }
+    
+    
+   
+        // Activity Items
+    UIImage *image = [UIImage imageNamed:@"home_selected"];
+        NSString *caption = [selectedDict objectForKey:@"title"];
+        NSArray *activityItems = @[image, caption];
+        // Initialize Activity View Controller
+        UIActivityViewController *vc = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+        // Present Activity View Controller
+        [self presentViewController:vc animated:YES completion:nil];
+    
+    
+    
+    
+}
+
+
+
 
 @end
