@@ -9,8 +9,20 @@
 #import <UIKit/UIKit.h>
 #import "VimeoHttpClient.h"
 
-@interface LatestVideosTVC : UITableViewController<VimeoHttpClientDelegate>
+
+@protocol LatestVideosTVCDelegate <NSObject>
+
+-(void)didSentSelectedVideoTo:(UITableViewController *)tvc with:(NSDictionary *) newVideo;
+
+@end
+
+
+@interface LatestVideosTVC : UITableViewController
+
+@property(weak) id<LatestVideosTVCDelegate> delegate;
 
 @property(strong,nonatomic) NSArray *videoItems;
+
+- (IBAction)cancelModalView:(id)sender;
 
 @end

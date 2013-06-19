@@ -31,24 +31,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    VimeoHttpClient *vimeoHttpClient =[VimeoHttpClient sharedVimeoHttpClient];
-    vimeoHttpClient.delegate = self;
-    
-    [vimeoHttpClient collectDataFromVimeoServer];
-    
-    
-    
+//    VimeoHttpClient *vimeoHttpClient =[VimeoHttpClient sharedVimeoHttpClient];
+//    vimeoHttpClient.delegate = self;
 //    
-//    // Remove table cell separator
-//    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-//    
-//    // Assign our own backgroud for the view
-//    self.parentViewController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"common_bg"]];
-//    self.tableView.backgroundColor = [UIColor clearColor];
-//    
-//    // Add padding to the top of the table view
-//    UIEdgeInsets inset = UIEdgeInsetsMake(5, 0, 0, 0);
-//    self.tableView.contentInset = inset;
+//    [vimeoHttpClient collectDataFromVimeoServer];
     
 }
 
@@ -59,16 +45,6 @@
 }
 
 #pragma mark - custom methods
-
--(UIImage *)getImage:(NSString *) imageUrl
-{
-//   NSData *data=[NSData dataWithContentsOfURL:[NSURL URLWithString:gameObj.gameThumbnails]]; UIImage *myImage=[UIImage imageWithData:data]; imageView.image=[UIImage imageWithData:UIImageJPEGRepresentation(myImage, 0.9)];
-    
-    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
-    UIImage *myImage = [UIImage imageWithData:data];
-    UIImage *jpegImage = [UIImage imageWithData:UIImageJPEGRepresentation(myImage, 0.9)];
-    return jpegImage;
-}
 
 -(NSString *) getTime:(NSString *)seconds
 {
@@ -87,24 +63,6 @@
     }
     
     return strTime;
-}
-
-
-- (UIImage *)cellBackgroundForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSInteger rowCount = [self tableView:[self tableView] numberOfRowsInSection:0];
-    NSInteger rowIndex = indexPath.row;
-    UIImage *background = nil;
-    
-    if (rowIndex == 0) {
-        background = [UIImage imageNamed:@"cell_top.png"];
-    } else if (rowIndex == rowCount - 1) {
-        background = [UIImage imageNamed:@"cell_bottom.png"];
-    } else {
-        background = [UIImage imageNamed:@"cell_middle.png"];
-    }
-    
-    return background;
 }
 
 
@@ -154,16 +112,6 @@
     UILabel *labelDuration = (UILabel*)[cell.contentView viewWithTag:102];
     labelDuration.text=[self getTime:[videoDict objectForKey:@"duration"]];
     
-    
-//    cell.textLabel.text = [videoDict objectForKey:@"title"];
-    
-    // Assign our own background image for the cell
-//    UIImage *background = [self cellBackgroundForRowAtIndexPath:indexPath];
-//    
-//    UIImageView *cellBackgroundView = [[UIImageView alloc] initWithImage:background];
-//    cellBackgroundView.image = background;
-//    cell.backgroundView = cellBackgroundView;
-    
     return cell;
 }
 
@@ -171,39 +119,34 @@
 
 #pragma mark - Table view delegate
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    NSDictionary *videoDict=[self.videoItems objectAtIndex:indexPath.row];
-//    NSURL *videoUrl = [NSURL URLWithString:[videoDict objectForKey:@"url"]];
-//    
-//    NSURL *appleUrl = [NSURL URLWithString:@"https://vimeo.com/65050844"];
-//    
-//    NSLog(@"video url : %@",videoUrl);
-//    MPMoviePlayerViewController *player = [[MPMoviePlayerViewController alloc] initWithContentURL:appleUrl];
-//    
-//    [self presentMoviePlayerViewControllerAnimated:player]; 
-//    
-//}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *videoDict=[self.videoItems objectAtIndex:indexPath.row];
+    
+    [self.delegate didSentSelectedVideoTo:self with:videoDict];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 #pragma mark - VimeoHttpClientDelegate methods
--(void)vimeoHttpClient:(VimeoHttpClient *)client didUpdateWithData:(id)data
-{
-    self.videoItems = data;
-    self.title = @"Latest Videos";
-    [self.tableView reloadData];
-    
-   // NSLog(@"data inside tvc: %@",self.videoItems);
-}
--(void)vimeoHttpClient:(VimeoHttpClient *)client didFailWithError:(NSError *)error
-{
-    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Videos"
-                                                 message:[NSString stringWithFormat:@"%@",error]
-                                                delegate:nil
-                                       cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [av show];
-    
-}
+//-(void)vimeoHttpClient:(VimeoHttpClient *)client didUpdateWithData:(id)data
+//{
+//    self.videoItems = data;
+//    self.title = @"Latest Videos";
+//    [self.tableView reloadData];
+//    
+//   // NSLog(@"data inside tvc: %@",self.videoItems);
+//}
+//-(void)vimeoHttpClient:(VimeoHttpClient *)client didFailWithError:(NSError *)error
+//{
+//    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Videos"
+//                                                 message:[NSString stringWithFormat:@"%@",error]
+//                                                delegate:nil
+//                                       cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//    [av show];
+//    
+//}
 
 
 #pragma mark - segue method
@@ -217,7 +160,10 @@
     
 }
 
+ 
 
-
-
+- (IBAction)cancelModalView:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

@@ -8,11 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "ParentViewController.h"
+#import "VimeoHttpClient.h"
+#import "LatestVideosTVC.h"
 
-@interface StreamingVC : UIViewController
+@interface StreamingVC : ParentViewController<VimeoHttpClientDelegate,LatestVideosTVCDelegate>
 
 @property(nonatomic,strong) NSDictionary *selectedDict;
-@property(nonatomic,strong) MPMoviePlayerController *player;
+@property(nonatomic,strong) NSArray *videoArray;
+@property(nonatomic,strong) NSDictionary *videoDict;
+
+@property(nonatomic,strong) UIImage *myImage;
+
 @property (weak, nonatomic) IBOutlet UIWebView *videoWebView;
 - (IBAction)shareButton:(id)sender;
 

@@ -44,7 +44,7 @@
        parameters:parameters
           success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
-        // NSLog(@"Data:%@", responseObject);
+         NSLog(@"Data:%@", responseObject);
          
          if([self.delegate respondsToSelector:@selector(vimeoHttpClient:didUpdateWithData:)])
              [self.delegate vimeoHttpClient:self didUpdateWithData:responseObject];
