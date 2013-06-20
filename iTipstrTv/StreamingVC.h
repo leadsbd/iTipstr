@@ -23,4 +23,6 @@
 @property (weak, nonatomic) IBOutlet UIWebView *videoWebView;
 - (IBAction)shareButton:(id)sender;
 
+@property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;
+
 @end

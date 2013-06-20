@@ -28,11 +28,23 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    // Setting Up Activity Indicator View
+    self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.activityIndicatorView.hidesWhenStopped = YES;
+    self.activityIndicatorView.center = self.view.center;
+    [self.view addSubview:self.activityIndicatorView];
+    [self.activityIndicatorView startAnimating];
+    
     NSString *urlString = @"http://www.tipstr.tv/sound-visions-album/";
     NSURL *url = [NSURL URLWithString:urlString];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.myTipstrWebView loadRequest:request];
+    
+    
+    
+    [self.activityIndicatorView stopAnimating];
+    
 }
 
 - (void)didReceiveMemoryWarning

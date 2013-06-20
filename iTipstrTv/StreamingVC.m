@@ -31,6 +31,8 @@
     NSURL *url = [NSURL URLWithString:urlAddress];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.videoWebView loadRequest:requestObj];
+    
+    [self.activityIndicatorView stopAnimating];
 }
 
 - (void)viewDidLoad
@@ -43,8 +45,14 @@
     
     [vimeoHttpClient collectDataFromVimeoServer];
     
-  //  [self displayVideo];
-    
+  
+    // Setting Up Activity Indicator View
+    self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [self.activityIndicatorView setColor:[UIColor brownColor]];
+    self.activityIndicatorView.hidesWhenStopped = YES;
+    self.activityIndicatorView.center = self.view.center;
+    [self.view addSubview:self.activityIndicatorView];
+    [self.activityIndicatorView startAnimating];
     
 }
 
@@ -52,30 +60,14 @@
 
 - (IBAction)shareButton:(id)sender {
     
-    NSString *imageUrl = [selectedDict objectForKey:@"thumbnail_medium"];
+    NSString *urlString = @"http://www.tipstr.tv/";
+    NSURL *url1 = [NSURL URLWithString:urlString];
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:imageUrl]];
-    AFImageRequestOperation *operation = [AFImageRequestOperation imageRequestOperationWithRequest:request
-                                                                              imageProcessingBlock:nil
-                                                                                           success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                                                                                              myImage = image;
-                                                                                              
-                                                                                               NSString *urlString = [selectedDict objectForKey:@"url"];
-                                                                                               NSURL *url1 = [NSURL URLWithString:urlString];
-                                                                                    
-                                                                                               NSArray *activityItems = @[url1];
-                                                                                    
-                                                                                               
-                                                                                               UIActivityViewController *vc = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
-                                                                                               [self presentViewController:vc animated:YES completion:nil];
-                                                                                           }
-                                                                                           failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-                                                                                               NSLog(@"Error %@",error);
-                                                                                           }];
-    [operation start];
+    NSArray *activityItems = @[url1];
     
-       
-    NSLog(@"Hello \n Hello\n");
+    
+    UIActivityViewController *vc = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    [self presentViewController:vc animated:YES completion:nil];
     
     
 }
@@ -102,13 +94,17 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    
     if([segue.identifier isEqualToString:@"segueVideoList"])
     {
-    LatestVideosTVC *latestTVC = segue.destinationViewController;
-    latestTVC.videoItems = videoArray;
-    
-    latestTVC.delegate = self;
+        UINavigationController *nav = segue.destinationViewController;
+        LatestVideosTVC *latestTVC = [nav.viewControllers objectAtIndex:0];
+        latestTVC.videoItems = videoArray;
+        
+        latestTVC.delegate = self;
     }
+    
+    
 }
 
 

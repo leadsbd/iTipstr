@@ -11,4 +11,6 @@
 @interface SoundVisionsAlbumVC : ParentViewController
 @property (strong, nonatomic) IBOutlet UIWebView *myTipstrWebView;
 
+@property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;
+
 @end

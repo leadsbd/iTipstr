@@ -16,13 +16,8 @@
 {
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-//    UIViewController *streamingVC = [storyboard instantiateViewControllerWithIdentifier:@"Main"];
-//    
-//    VimeoHttpClient *vimeoHttpClient =[VimeoHttpClient sharedVimeoHttpClient];
-//    vimeoHttpClient.delegate =streamingVC;
-//    
-//    [vimeoHttpClient collectDataFromVimeoServer];
+ //   [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
     return YES;
 }
 							

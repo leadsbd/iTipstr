@@ -33,7 +33,7 @@
 
     self.menu = [NSArray arrayWithObjects:@"Home",@"SoundVisionsAlbum",@"TurnTableChallenge",@"TipstrZine",nil];
     
-    [self.slidingViewController setAnchorRightRevealAmount:200.0f];
+    [self.slidingViewController setAnchorRightRevealAmount:240.0f];
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
 }
 

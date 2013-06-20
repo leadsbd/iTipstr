@@ -31,10 +31,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    VimeoHttpClient *vimeoHttpClient =[VimeoHttpClient sharedVimeoHttpClient];
-//    vimeoHttpClient.delegate = self;
-//    
-//    [vimeoHttpClient collectDataFromVimeoServer];
+    
+ //   barButton = nil;
     
 }
 
