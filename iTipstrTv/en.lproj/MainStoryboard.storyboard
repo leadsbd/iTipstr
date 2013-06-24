@@ -476,7 +476,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ParentViewController.h"/>
             <relationships>
                 <relationship kind="action" name="revealMenuLeft:"/>
-                <relationship kind="action" name="revealMenuRight:"/>
             </relationships>
         </class>
         <class className="SoundVisionsAlbumVC" superclassName="ParentViewController">
